@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { IoLogoGithub, IoLogoLinkedin, IoSunnySharp } from "react-icons/io5";
 import { api, HydrateClient } from "~/trpc/server";
 
 export default async function Home() {
@@ -6,7 +7,7 @@ export default async function Home() {
 
   return (
     <HydrateClient>
-      <nav className="grid h-10 w-full grid-cols-3">
+      <nav className="grid h-16 w-full grid-cols-3">
         <section className="flex place-items-center bg-red-500 px-2">
           <Link href="">Logo</Link>
         </section>
@@ -18,10 +19,16 @@ export default async function Home() {
           </Link>
           <Link href="">Collection</Link>
         </section>
-        <section className="flex place-items-center justify-end bg-yellow-500 px-2">
-          <Link href="">1</Link>
-          <Link href="">2</Link>
-          <Link href="">3</Link>
+        <section className="flex place-items-center justify-end gap-2 bg-yellow-500 px-2">
+          <button>
+            <IoSunnySharp className="h-5 w-5" />
+          </button>
+          <Link href="">
+            <IoLogoLinkedin className="h-5 w-5" />
+          </Link>
+          <Link href="">
+            <IoLogoGithub className="h-5 w-5" />
+          </Link>
         </section>
       </nav>
       <main className="flex h-full w-full flex-col">
